@@ -1,0 +1,46 @@
+<ion-view title="Place Order" id="placeorder">
+    <ion-nav-buttons side="right">
+      <button ng-click="vm.gotoOrderConfirm()" class="button  buttons  button-clear header-item " ><span class="badge badge-assertive" ng-show="vm.noOfItems" style="position:relative; left:25px; font-size:0.7em; padding:0px 3px; height:15px;">{{vm.noOfItems}}</span><i class="icon ion-android-cart"></i> Checkout <i class="icon ion-chevron-right"></i></button>
+    </ion-nav-buttons>
+    
+    <!--div class="bar bar-subheader" style="padding:0px">
+  <h2 class="title">Place Order</h2>
+        <button ng-click="go('/order-confirm')" class="button " style="float:right; margin:5px"><i class="icon ion-android-cart"></i><span class="badge badge-assertive">{{noOfItems}}</span> Checkout <i class="icon ion-chevron-right"></i></button>
+        
+        <div style="clear:both"></div-->
+    
+  <ion-content padding="false">
+      <!--select  class="asdfform-control asdfinput-sm" id="category" ng-model="category" ng-options="category.name as category.name for category in vm.categories"><option value=""> -- ALL -- </option></select-->
+
+     <div class="list" style="margin-bottom:0">
+            <div class="bar bar-header item-input-inset">
+                <!-- <ion-search placeholder="Search for stock item" filter="vm.gridOptions.quickFilterText"></ion-search> -->
+                <div class="item-input-wrapper">
+                        <i class="icon ion-android-search"></i>
+                        <input type="search" placeholder="Search for stock item" ng-model="vm.gridOptions.quickFilterText">
+                       
+                      </div>
+           </div>
+      </div>
+
+    <!--   <input placeholder="Search..." type="text" class="" ng-model="vm.gridOptions.quickFilterText"/> -->
+     
+      <div ag-grid="vm.gridOptions" class="ag-fresh" style="width:100%; " resizegrid ></div>
+
+      <!-- <table datatable=""  dt-options="vm.dtOptions" dt-columns="vm.dtColumns" dt-instance="vm.dtInstance" class="table table-striped" width="100%" style="background-color:white"> 
+	<thead>
+	<tr>
+		<th >ID</th>
+		<th>Category</th>
+		<th >Description</th>
+		<th></th>
+	</tr>
+	</thead>
+
+	
+	<tbody>
+	
+	</tbody>
+</table>-->
+  </ion-content>
+</ion-view>

@@ -1,0 +1,136 @@
+<ion-view title="Delivery">
+    <ion-nav-buttons side="right">
+         <button ng-click="vm.gotoFinish()" class="button  buttons  button-clear header-item " ><i class="icon ion-checkmark-circled"></i> &nbsp;Complete&nbsp;  <i class="icon ion-chevron-right"></i></button>
+    </ion-nav-buttons>
+    <!--div class="bar bar-subheader" style="padding:0px">
+        
+        <button ng-click="go('/order-confirm')" class="button " style="margin:5px"><i class="icon ion-chevron-left"></i> Basket <i class="icon ion-android-cart"></i></button>
+        
+  <h2 class="title">Delivery Address</h2>
+        
+        <button ng-click="go('/orders')" class="button " style="float:right; margin:5px"><i class="icon ion-checkmark-circled"> Complete <i class="icon ion-chevron-right"></i></button>
+       
+</div-->
+    
+    <ion-side-menus style="margin-top:40px">
+    
+      <ion-side-menu-content>
+        <ion-header-bar class="bar-stable ">
+          <button class="button button-icon ion-navicon" ng-click="vm.toggleLeft()" ng-hide="$exposeAside.active"></button>
+          <h1 class="title">Delivery Address</h1>
+        </ion-header-bar>
+        <ion-content class="nopadding">
+
+        <form name="vm.form" novalidate="">
+          
+            <div class="list">
+  <label class="item item-input item-select">
+    <span class="input-label">Beneficiary Type</span>
+    <select ng-model="vm.beneficiary_type"
+            ng-change="vm.beneficiary=''"
+      ><option>Person</option>
+        <option>Asset</option>
+        <option>Stock</option>
+      </select>
+  </label> 
+  <label class="item item-input">
+    <span class="input-label">Beneficiary</span>
+    <ion-autocomplete 
+      ng-model="vm.beneficiary" 
+      items-method="vm.Beneficiary.getBySearch(query,vm.beneficiary_type)"
+      item-value-key="id"
+      item-view-value-key="name"
+      required
+       ></ion-autocomplete>
+  </label>
+                <div class="card"><div class="item item-text-wrap">
+           Enter address to ship to, or choose a saved address from the left.
+              </div></div>
+               
+                </div>
+            <div class="list" >
+  <label class="item item-input">
+    <span class="input-label">Contact Person</span>
+    <input required ng-model="vm.fulladdress.person" type="text">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Mobile Number</span>
+    <input  ng-model="vm.fulladdress.phone" type="tel">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Email</span>
+    <input  ng-model="vm.fulladdress.email" type="email">
+  </label>
+                </div><div class="list">
+  <label class="item item-input">
+    <span class="input-label">Address</span>
+    <input  required ng-model="vm.fulladdress.address1" type="text">
+  </label>
+  <label class="item item-input">
+    <span class="input-label"></span>
+    <input  ng-model="vm.fulladdress.address2" type="text">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">City</span>
+    <input  required ng-model="vm.fulladdress.city" type="text">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">State / Province</span>
+    <input  ng-model="vm.fulladdress.state" type="text">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Zip / Post Code</span>
+    <input  ng-model="vm.fulladdress.zip" type="text">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Country</span>
+    <ion-autocomplete 
+      ng-model="vm.fulladdress.country" 
+      items-method="vm.getCountry(query)"
+       required
+       ></ion-autocomplete>
+  </label>
+</div>
+            <br>
+            <label class="toggle" style="margin-left:10px; v-align:center">
+   <input type="checkbox" ng-model="saveToBook">
+   <div class="track">
+     <div class="handle"></div>
+   </div>
+                Save to Address Book
+</label>
+            
+            </div>
+          
+          <div class="list" ng-show="saveToBook">
+          <label class="item item-input">
+    <span class="input-label">Save Address As</span>
+    <input type="text" ng-model="vm.fulladdress.name" placeholder="eg Head Office" >
+   
+  </label>
+  <button ng-click="vm.saveAddress()" class="button  button-balanced ion-person-add" style="position:relative; float:right; top:-47px; margin-right:10px; z-index:100"> Save</button>
+          </div>
+
+            <br style="clear:both"><br><br><br><br><br><br><br><br>
+            
+            </form>
+        </ion-content>
+      </ion-side-menu-content>
+    
+      <ion-side-menu expose-aside-when="large">
+        <ion-header-bar class="bar-stable ">
+          <h1 class="title">Address Book</h1>
+        </ion-header-bar>
+        <ion-content>
+          <div class="list">
+            <a class="item" ng-repeat="ad in vm.addressBook" ng-click="vm.loadFromAddressBook(ad)">
+              <h2>{{ad.name}}</h2>
+              <p><b>{{ad.person}}</b> {{ad.phone}}</p>
+              <p>{{ad.address1}}, {{ad.address2}}, {{ad.city}}</p>
+            </a>
+          </div>
+        </ion-content>
+      </ion-side-menu>
+      
+    </ion-side-menus>
+</ion-view>

@@ -1,0 +1,61 @@
+<!--ion-view>
+<ion-content  class="has-header">
+    <ion-tabs class="tabs-default">
+
+
+ 
+  <ion-tab title="Pets" icon="icon ion-home" href="#/tab/pets">
+    <ion-nav-view name="pets-tab"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Adopt" icon="icon ion-heart" href="#/tab/adopt">
+    <ion-nav-view name="adopt-tab"></ion-nav-view>
+  </ion-tab>
+
+
+  <ion-tab title="About" icon="icon ion-search" href="#/tab/about">
+    <ion-nav-view name="about-tab"></ion-nav-view>
+  </ion-tab>
+
+
+    </ion-tabs></ion-content></ion-view-->
+<ion-view  view-title="Register" style="background-color:#ddd">
+<ion-content >
+    
+    <br><br>
+    
+			<form name="vm.form">
+      <div class="list card " style="max-width:500px; margin:auto">
+      <div class="item item-text-wrap" style="text-align:center">
+      <h3>Register a new user</h3><p>You will receive an email once approved with login details.</p>
+      </div>
+        <label class="item item-input">
+          <span class="input-label">Email</span>
+          <input type="email" required ng-model="vm.loginData.email">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Name</span>
+          <input type="text"  required ng-model="vm.loginData.name">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Company</span>
+          <input type="text"  required  ng-model="vm.loginData.company">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Phone</span>
+          <input type="tel"  required  ng-model="vm.loginData.tel">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" ng-click="vm.doRegister()">Register</button>
+        </label>
+          
+      </div>
+    </form>
+    <!-- <br>
+    <div  style="text-align:center">
+              <a class="button" hre="#">Forgot password?</a>
+              <a class="button" ng-click="app.go('/login')">Back to Login</a> 
+          </div> -->
+        </ion-content>
+</ion-view>
+

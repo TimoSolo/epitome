@@ -1,0 +1,34 @@
+<ion-view   title="My Library" hide-back-button="true"> 
+
+<ion-nav-buttons side="left">
+<button ng-click="app.go('/app')" class="button back-button buttons  button-clear header-item"><i class="icon ion-ios-arrow-back"></i> Home </button>
+      </ion-nav-buttons>
+
+      
+        <ion-content  padding="false">
+
+<ion-header-bar class="bar-stable ">
+          <button class="button button-icon ion-navicon" ng-click="lib.toggleLeft()" ng-hide="$exposeAside.active"></button>
+          <h1 class="title">Stock</h1>
+
+          <button class="button button-icon button-clear ion-plus-circled" ng-click="vm.add()" > Add </button>
+        </ion-header-bar>
+
+
+
+<div class="list" style="margin-bottom:0">
+            <div class="bar bar-header item-input-inset" style="margin-top:43px">
+                <!-- <ion-search placeholder="Search for stock item" filter="vm.gridOptions.quickFilterText"></ion-search> -->
+                <div class="item-input-wrapper">
+                        <i class="icon ion-android-search"></i>
+                        <input type="search" placeholder="Search for stock item" ng-model="vm.gridOptions.quickFilterText">
+                       
+                      </div>
+           </div>
+      </div>
+
+      <div ag-grid="vm.gridOptions" class="ag-fresh" style="width:100%; " resizegrid ></div>
+
+        </ion-content>
+
+    </ion-view>

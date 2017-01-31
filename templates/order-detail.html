@@ -1,0 +1,44 @@
+<ion-view title="Order Detail"  class="slide-in-up">
+    
+  <ion-content class="padding">
+<div class="list card">
+
+    <div class="item ">
+		    <div class="row">
+		    <div class="col">
+
+      <h2>Status:</h2>
+      <p>{{vm.order.status}}</p>
+      <br>
+      <h2>Beneficiary:</h2>
+      <p>{{vm.order.beneficiary_type}}: {{vm.order.beneficiary}}</p>
+      </div>
+		    <div class="col">
+      <h2>Delivery Address:</h2>
+      <p ng-bind-html="vm.address"></p>
+      </div>
+
+      <div class="col" >
+
+		<!-- <button class="button button-balanced" style="float:right">
+		      <i class="icon ion-checkmark-circled"></i> Approve
+		    </button>&nbsp;
+		<button class="button button-assertive" style="float:right">
+		      <i class="icon ion-close-circled"></i> Decline
+		    </button>&nbsp; -->
+		<button class="button button-positive"  style="float:right" ng-click="vm.actionClick()">
+		      <i class="icon ion-ios-compose"></i> Actions...
+		    </button>
+		    </div>
+
+
+		</div>
+    </div>
+    </div>
+
+</div>
+    <div ag-grid="vm.gridOptions" class="ag-fresh " style="width:100%; " resizegrid fullheight ></div>
+    <div ag-grid="vm.gridOptionsTotals" class="ag-fresh " style="width:100%; " resizegrid fullheight ></div>
+    
+  </ion-content>
+</ion-view>

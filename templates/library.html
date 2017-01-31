@@ -1,0 +1,44 @@
+<ion-view view-title="My Library" title="My Library" hide-back-button="true"> 
+
+<ion-nav-buttons side="left">
+<button ng-click="app.go('/app')" class="button back-button buttons  button-clear header-item"><i class="icon ion-ios-arrow-back"></i> Home </button>
+      </ion-nav-buttons>
+      
+    
+
+    <ion-side-menus has-header="true" >
+       
+ 
+        
+       <ion-side-menu-content >
+        
+            
+            <ion-nav-view name="main" ></ion-nav-view>
+            
+            
+          
+      </ion-side-menu-content>
+    
+      <ion-side-menu expose-aside-when="large" style="margin-top:43px">
+        <ion-header-bar class="bar-stable ">
+          <h1 class="title">Menu</h1>
+        </ion-header-bar>
+        <ion-content has-header="true">
+          <div class="list">
+            <a ui-sref="library.stock" class="item" ng-click="lib.toggleLeft()">
+              <h2>Stock</h2>
+            </a>
+            <a ui-sref="library.assets" class="item" ng-click="lib.toggleLeft()">
+              <h2>Assets</h2>
+            </a>
+            <a ui-sref="library.beneficiaries" class="item" ng-click="lib.toggleLeft()">
+              <h2>Beneficiaries</h2>
+            </a>
+          </div>
+        </ion-content>
+      </ion-side-menu>
+      
+    </ion-side-menus>
+</ion-view>
+
+

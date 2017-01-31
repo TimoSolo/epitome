@@ -1,0 +1,19 @@
+<ion-view  title="My Library" hide-back-button="true"> 
+
+<ion-nav-buttons side="left">
+<button ng-click="app.go('/app')" class="button back-button buttons  button-clear header-item"><i class="icon ion-ios-arrow-back"></i> Home </button>
+      </ion-nav-buttons>
+
+        <ion-content  padding="false" >
+            
+<ion-header-bar class="bar-stable ">
+          <button class="button button-icon ion-navicon" ng-click="lib.toggleLeft()" ng-hide="$exposeAside.active"></button>
+          <h1 class="title">Assets</h1>
+
+          <button class="button button-icon button-clear ion-plus-circled" ng-click="vm.add()" > Add </button>
+        </ion-header-bar>
+
+            assets
+        </ion-content>
+
+    </ion-view>

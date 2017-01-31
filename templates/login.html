@@ -1,0 +1,123 @@
+<!--ion-view>
+<ion-content  class="has-header">
+    <ion-tabs class="tabs-default">
+
+
+ 
+  <ion-tab title="Pets" icon="icon ion-home" href="#/tab/pets">
+    <ion-nav-view name="pets-tab"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Adopt" icon="icon ion-heart" href="#/tab/adopt">
+    <ion-nav-view name="adopt-tab"></ion-nav-view>
+  </ion-tab>
+
+
+  <ion-tab title="About" icon="icon ion-search" href="#/tab/about">
+    <ion-nav-view name="about-tab"></ion-nav-view>
+  </ion-tab>
+
+
+    </ion-tabs></ion-content></ion-view-->
+<ion-view view-title="Epitome - Login" style="nobackground-color:#ddd">
+
+<ion-content  class="has-header">
+    
+    <br><br>
+    
+			<form ng-submit="doLogin()" name="form" novalidate="">
+      <div class="list  " style="max-width:500px; margin:auto">
+      <div class="" style="text-align:center">
+      <img src="img/logo.png" >
+      </div>
+
+        <div ng-cloak class="item item-text-wrap balanced animate-show"  style="text-align:center" ng-show="loginData.change_password == 1">
+           <i class="icon ion-checkmark-circled"></i> An email with your password will be sent to you.
+              </div>
+
+        <label class="item item-input" ng-class="{ 'has-error' : form.email.$invalid}">
+          <span class="input-label">Username</span>
+          <input type="email" required ng-model="loginData.email">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Password</span>
+          <input type="password" ng-model="loginData.password">
+        </label>
+        <label class="button-block ">
+          <button class="button button-block button-positive" type="submit">Log in</button>
+        </label>
+          
+          <div class="row" style="padding:0;" >
+            <div class="col" style="padding:0 17px 0 0;" >
+              <a class="button button-block" ng-click="forgotPassword()">Forgot password?</a>
+              </div>
+              <div class="col" style="padding:0 0 17px 0;" >
+              <a class="button button-block" ng-click="app.go('/register')">Register New User</a> 
+              </div>
+          </div>
+      </div>
+    </form>
+    <br>
+    
+        </ion-content>
+</ion-view>
+<!-- -->
+<!--ion-view>
+<ion-content  >
+    <ion-tabs class="tabs-striped tabs-top tabs-background-calm tabs-color-light">
+	<ion-tab title="LOGIN" href="#">
+		<ion-nav-view>
+        <ion-view >
+            <ion-content has-tabs="true">
+                
+			<form ng-submit="doLogin()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Username</span>
+          <input type="text" ng-model="loginData.username">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Password</span>
+          <input type="password" ng-model="loginData.password">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Log in</button>
+        </label>
+      </div>
+    </form>
+        </ion-content>
+        </ion-view>
+            </ion-nav-view>
+	</ion-tab>
+	<ion-tab title="REGISTER">
+		<ion-content>
+			<form ng-submit="doLogin()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Email</span>
+          <input type="email" >
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Name</span>
+          <input type="text" >
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Company</span>
+          <input type="text" >
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Phone</span>
+          <input type="tel" >
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Log in</button>
+        </label>
+      </div>
+    </form>
+        </ion-content>
+	</ion-tab>
+</ion-tabs>
+</ion-content>
+    </ion-view>
+<!-- -->
+

@@ -1,0 +1,29 @@
+<div class="modal">
+    <ion-header-bar>
+      <h1 class="title">Edit Contact</h1>
+    </ion-header-bar>
+    <ion-content class="padding">
+    <form name="vm.form" novalidate="">
+      <div class="list">
+
+        <label class="item item-input item-select">
+    <span class="input-label">Beneficiary Type</span>
+    <select required ng-model="vm.beneficiary.beneficiary_type">
+        <option>Person</option>
+        <option>Asset</option>
+        <option>Stock</option>
+      </select>
+  </label> 
+        <label class="item item-input">
+          <span class="input-label">Name</span>
+          <input type="text" required ng-model="vm.beneficiary.name">
+        </label>
+      </div>
+
+      <div class="row">
+      <button class="cell button button-full button-positive" ng-click="vm.saveModal()" style="margin-right:5px;">Save</button>
+      <button class="cell button button-full button -positive" ng-click="vm.closeModal()" style="margin-left:5px;">Cancel</button>
+      </div>
+      </form>
+    </ion-content>
+  </div>

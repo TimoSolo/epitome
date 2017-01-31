@@ -1,0 +1,39 @@
+<ion-view title="Notifications">
+  <ion-content padding="false">
+      <div class="card">
+  <div class="item item-text-wrap">
+    Notifications of orders pending action.
+  </div>
+</div>
+    <table st-table="stockList" class="table" width="100%" style="background-color:white">
+	<thead>
+	<tr>
+		<th st-sort="id">Order ID</th>
+		<th st-sort="desc">Notification Type</th>
+		<th st-sort="desc">Beneficiary Type</th>
+		<th st-sort="desc">Beneficiary</th>
+		
+		<th st-sort="desc"></th>
+	</tr>
+	<tr>
+		<th colspan="12">
+			<input st-search placeholder="global search" class="input-sm form-control" type="search"/>
+		</th>
+		
+	</tr>
+	</thead>
+
+	
+	<tbody>
+	<tr ng-repeat="row in vm.stockList" >
+		<td >ORD{{row.id}}</td>
+		<td>Order Awaiting Approval</td>
+		<td>Asset</td>
+		<td>XYZ123GP</td>
+		<td><button class="med-icon icon ion-information-circled button-clear button-dark" ng-click=""></button></td>
+	</tr>
+	</tbody>
+</table>
+  </ion-content>
+</ion-view>
+

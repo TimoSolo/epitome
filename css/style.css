@@ -1,0 +1,110 @@
+
+input.ng-invalid.ng-touched, form.ng-dirty .ng-invalid {
+  border-right: 3px solid red;
+}
+
+/* animation */
+
+/*.animate-show.ng-hide-add.ng-hide-add-active,*/
+.animate-show.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: all ease-out 0.3s;
+  transition: all ease-out 0.3s;
+}
+
+.animate-show.ng-hide {
+  line-height: 0;
+  opacity: 0;
+  padding: 0 10px;
+}
+
+/* UI */
+
+.big-icon:before {
+ font-size: 90px !important;
+ line-height: 90px !important;
+}
+
+.med-icon:before {
+ font-size: 25px !important;
+ line-height: 25px !important;
+}
+
+/*
+.button {
+	
+    box-shadow: inset 0px 1px 0px 0px #9fc0cf;
+    border-radius: 30px;
+
+	background: #3f8bae;
+	background: -webkit-linear-gradient(top, #3f8bae 5%,#015a84 100%);
+	background: linear-gradient(to bottom, #3f8bae 5%,#015a84 100%);
+    border:1px solid #206e92;
+    display:inline-block;
+    
+    color:#ffffff;
+    font-family:arial;
+    font-size:22px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:1px 1px 0px #1570cd;
+    text-align: center;
+
+}*/
+
+/* angular grid */
+.ag-body-viewport {
+  overflow-x: hidden; /* hack to hide scrollbar */
+}
+.noscroll .ag-body-viewport {
+  overflow-y: hidden; /* hack to hide scrollbar */
+}
+/* datatables */
+.dataTables_info {
+  padding-top: 5px !important;
+  padding-left: 10px;
+}
+.dataTables_filter {
+	width: 100%;
+	float: none;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-bottom: 1px solid #ddd;
+	margin-top: 6px;
+}
+.dataTables_filter label  {
+	text-align: left;
+	width: 100%;
+	-webkit-border-radius: 4px;
+  border-radius: 4px;
+  padding-right: 8px;
+  padding-left: 8px;
+  background: #eee;
+  color: #888;
+  font-weight: normal;
+}
+.dataTables_filter label input {
+	display: inline-block;
+	background: none;
+	width: 80%;
+	margin-top: -4px;
+}
+/* search ion directive */
+
+
+
+.bar.item-input-inset .item-input-wrapper input {
+    width: 100%;
+}
+
+.search-wrapper-light {
+    border-bottom: 2px solid rgba(255,255,255,0.5);
+    background: none;
+    border-radius: 0;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.search-wrapper-light input, .search-wrapper-light input::-webkit-input-placeholder {
+    color: #ffffff;
+}

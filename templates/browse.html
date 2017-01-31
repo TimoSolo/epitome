@@ -1,0 +1,44 @@
+<ion-view view-title="Home" hide-back-button="true">
+
+
+  <ion-content>
+          
+          <div class="row responsive-sm">
+  <div class="col">
+              <a ng-click="app.go('/order')" class="button  button-block">
+                  <i class="icon ion-ios-cart big-icon"></i><br/>Place Order
+                </a>
+              </div>
+  <div class="col">
+              <a ng-click="app.go('/orders')" class="button  button-block">
+                  <i class="icon ion-clipboard big-icon"></i><br/>Order Status
+                </a>
+              </div>
+  <div class="col">
+              <a ng-click="app.go('/track')" class="button  button-block">
+                  <i class="icon ion-map big-icon"></i><br/>Track Orders
+                </a>
+              </div>
+</div>
+          
+          <div class="row responsive-sm">
+  <div class="col">
+              <!-- notifications -->
+              <a ng-click="app.go('/orders')" class="button  button-block">
+                  <i class="icon ion-alert-circled big-icon"></i><br/>Notifications
+                </a>
+              </div>
+  <div class="col">
+              <a ng-click="app.go('/library/stock')" class="button  button-block">
+                  <i class="icon ion-filing big-icon"></i><br/>My Library
+                </a>
+              </div>
+  <div class="col">
+              </div>
+</div>
+          
+
+          
+          
+      </ion-content>
+</ion-view>

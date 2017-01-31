@@ -1,0 +1,60 @@
+<ion-view title="Order Detail"  class="slide-in-up">
+    
+  <ion-content class="nopadding">
+<div class="list card" id="header">
+
+    <div class="item ">
+        <div class="row">
+        <div class="col">
+
+      <h2>Order:</h2>
+      <p>#{{vm.order.id}}: {{vm.order.status}}</p>
+      <br>
+      <h2>Shipment:</h2>
+      <p>#{{vm.shipment.id}}: {{vm.shipment.status}}</p>
+      
+      </div>
+      <div class="col">
+      <h2>Beneficiary:</h2>
+      <p>{{vm.order.beneficiary_type}} 
+      <br>
+      {{vm.order.beneficiary}}</p>
+      </div>
+        <div class="col">
+      <h2>Delivery Address:</h2>
+      <p ng-bind-html="vm.address"></p>
+      </div>
+
+    </div>
+    </div>
+    </div>
+    
+    <ion-side-menus  resizetracker > <!-- style="margin-top:255px; height:500px" -->
+    
+      <ion-side-menu-content>
+        <ion-header-bar class="bar-stable ">
+          <button class="button button-icon ion-navicon" ng-click="vm.toggleLeft()" ng-hide="$exposeAside.active"></button>
+          <h1 class="title">Tracking</h1>
+        </ion-header-bar>
+        <ion-content class="">
+          <leaflet width="100%" style="height:300px" id="map"  center="vm.center" markers="vm.markers" paths="vm.paths"></leaflet>
+        </ion-content>
+      </ion-side-menu-content>
+    
+      <ion-side-menu expose-aside-when="large">
+        <ion-header-bar class="bar-stable ">
+          <h1 class="title">Movements</h1>
+        </ion-header-bar>
+        <ion-content>
+          <div class="list">
+            <a class="item" ng-repeat="move in vm.moves" ng-click="vm.showMap($index);">
+              <h2>{{move.status}}</h2>
+              <p>{{move.date}} {{move.description}}</p>
+            </a>
+          </div>
+        </ion-content>
+      </ion-side-menu>
+      
+    </ion-side-menus>
+    </ion-content>
+</ion-view>

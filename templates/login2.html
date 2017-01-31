@@ -1,0 +1,157 @@
+<style type="text/css">
+  .bar {
+    /*opacity: 0.4;
+    filter: alpha(opacity=40); */
+text-shadow: 0px 1px 0px #222;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4) !important;
+
+    background: -moz-linear-gradient(top, rgba(135,224,253,0.2) 0%, rgba(83,203,241,0.2) 40%, rgba(5,171,224,0.2) 100%) !important; /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(135,224,253,0.2)), color-stop(40%,rgba(83,203,241,0.2)), color-stop(100%,rgba(5,171,224,0.2))) !important; /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(135,224,253,0.2) 0%,rgba(83,203,241,0.2) 40%,rgba(5,171,224,0.2) 100%) !important; /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(135,224,253,0.2) 0%,rgba(83,203,241,0.2) 40%,rgba(5,171,224,0.2) 100%) !important; /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(135,224,253,0.2) 0%,rgba(83,203,241,0.2) 40%,rgba(5,171,224,0.2) 100%) !important; /* IE10+ */
+background: linear-gradient(to bottom, rgba(135,224,253,0.2) 0%,rgba(83,203,241,0.2) 40%,rgba(5,171,224,0.2) 100%) !important; /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf87e0fd', endColorstr='#bf05abe0',GradientType=0 ) !important; /* IE6-9 */
+  }
+  .card {
+    background: url(img/metal.jpg);
+    padding: 10px;
+    border-radius: 7px;
+
+
+  /*  -moz-box-shadow:
+-webkit-box-shadow: */
+box-shadow:
+
+0px 4px 12px rgba(0,0,0,0.7), /*bottom external shadow*/
+inset 0 -1px 2px rgba(255,255,255,0.9),
+inset 0 -2px 2px rgba(0,0,0,0.7), /*bottom internal shadow*/
+inset 0 1px 2px rgba(255,255,255,0.9); /*top internal highlight*/
+
+  }
+  .item {
+    background: rgba(255,255,255,0.5);
+    border: none;
+  }
+  .item.item-input input {
+
+    /*background: rgba(255,255,255,0.5);
+    border-radius: 3px;*/
+    border-radius: 10px;
+    padding-left:10px;
+    margin-right: 10px;
+    box-shadow:
+    inset 0 -3px 0px rgba(0,0,0,0.1); /*bottom internal shadow*/
+  }
+  .button {
+    border-radius: 7px;
+    box-shadow:
+    -1px -1px 1px rgba(255,255,255,0.9),
+    -2px -2px 1px rgba(0,0,0,0.1),
+    1px 2px 1px rgba(255,255,255,0.5),
+    inset 0 -20px 2px rgba(0,0,0,0.05); /*bottom internal shadow*/
+  }
+</style>
+<ion-view view-title="Epitome - Login" style="background:url(img/tribg.jpg); background-size: 100% auto;">
+
+<ion-content  class="has-header">
+    
+    <br><br>
+    
+			<form ng-submit="doLogin()" name="form" novalidate="">
+      
+      <div class="" style="text-align:center">
+      <img src="img/logo2.png" >
+      </div>
+<div class="list  card" style="max-width:500px; margin:auto">
+        <div ng-cloak class="item item-text-wrap balanced animate-show"  style="text-align:center" ng-show="loginData.change_password == 1">
+           <i class="icon ion-checkmark-circled"></i> An email with your password will be sent to you.
+              </div>
+
+        <label class="item item-input" ng-class="{ 'has-error' : form.email.$invalid}">
+          <span class="input-label">Username</span>
+          <input type="email" required ng-model="loginData.email">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Password</span>
+          <input type="password" ng-model="loginData.password">
+        </label>
+        <label class="item button-block ">
+          <button class="button button-block button-positive" type="submit">Log in</button>
+        </label>
+          
+          <div class="item row" >
+            <div class="col" style="padding:0 12px 0 12px;" >
+              <a class="button button-block" ng-click="forgotPassword()">Forgot password?</a>
+              </div>
+              <div class="col" style="padding:0 12px 0 12px;" >
+              <a class="button button-block" ng-click="app.go('/register')">Register New User</a> 
+              </div>
+          </div>
+      </div>
+    </form>
+    <br>
+    
+        </ion-content>
+</ion-view>
+<!-- -->
+<!--ion-view>
+<ion-content  >
+    <ion-tabs class="tabs-striped tabs-top tabs-background-calm tabs-color-light">
+	<ion-tab title="LOGIN" href="#">
+		<ion-nav-view>
+        <ion-view >
+            <ion-content has-tabs="true">
+                
+			<form ng-submit="doLogin()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Username</span>
+          <input type="text" ng-model="loginData.username">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Password</span>
+          <input type="password" ng-model="loginData.password">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Log in</button>
+        </label>
+      </div>
+    </form>
+        </ion-content>
+        </ion-view>
+            </ion-nav-view>
+	</ion-tab>
+	<ion-tab title="REGISTER">
+		<ion-content>
+			<form ng-submit="doLogin()">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Email</span>
+          <input type="email" >
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Name</span>
+          <input type="text" >
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Company</span>
+          <input type="text" >
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Phone</span>
+          <input type="tel" >
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Log in</button>
+        </label>
+      </div>
+    </form>
+        </ion-content>
+	</ion-tab>
+</ion-tabs>
+</ion-content>
+    </ion-view>
+<!-- -->
+
